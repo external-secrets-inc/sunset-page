@@ -78,3 +78,12 @@
 .prose a:hover {
   --tw-prose-links: var(--color-link-accent);
 }
+/* Global link styles for non-prose links */
+a {
+  color: var(--color-link);
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--color-link-accent);
+}

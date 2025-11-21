@@ -1,0 +1,49 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import LogoIcon from '../components/LogoIcon.astro';
+import HeaderLogo from '../components/HeaderLogo.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = "External Secrets Inc. - Winding Down Operations",
+  description = "External Secrets Inc. is winding down operations. Our last day of full operations will be November 28, 2025."
+} = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <div
+    class="min-h-screen bg-linear-to-br from-base-50 via-primary-100 to-primary-100 relative overflow-hidden"
+  >
+    <LogoIcon
+      class="fixed top-0 right-0 opacity-8 z-10 animate-spin-slow [animation-duration:150s] h-auto w-[min(70dvw,1200px)] translate-x-[25%] -translate-y-[30%]"
+    />
+
+    <div class="max-w-4xl mx-auto px-6 py-16 md:py-24 relative z-20">
+      <div class="max-w-3xl mx-auto">
+        <header
+          class="mb-12 md:mb-16 text-center flex flex-col items-center justify-center"
+        >
+          <HeaderLogo />
+          <div
+            class="mt-6 h-px w-full bg-linear-to-r from-transparent via-primary-400 to-transparent opacity-50"
+          >
+          </div>
+        </header>
+
+        <main>
+          <article class="prose prose-lg max-w-none prose-headings:text-foreground prose-headings:font-semibold prose-p:text-foreground prose-p:leading-relaxed prose-strong:text-foreground prose-strong:font-semibold prose-a:text-link prose-a:underline prose-a:decoration-2 prose-a:underline-offset-4 prose-ul:text-foreground prose-ol:text-foreground prose-li:text-foreground">
+            <slot />
+          </article>
+        </main>
+
+        <Footer />
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+

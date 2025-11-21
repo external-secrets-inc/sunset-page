@@ -9,8 +9,11 @@ export default tseslint.config(
   },
   // Base JavaScript config
   js.configs.recommended,
-  // TypeScript config
-  ...tseslint.configs.recommendedTypeChecked,
+  // TypeScript config (exclude Astro files)
+  ...tseslint.configs.recommendedTypeChecked.map((config) => ({
+    ...config,
+    files: ['**/*.{js,mjs,cjs,ts}'],
+  })),
   // Astro config
   ...astroPlugin.configs.recommended,
   // Custom rules
@@ -61,8 +64,8 @@ export default tseslint.config(
       parserOptions: {
         parser: '@typescript-eslint/parser',
         extraFileExtensions: ['.astro'],
-        project: './tsconfig.json',
-        tsconfigRootDir: import.meta.dirname,
+        // Don't use project-based type checking for Astro files
+        // Astro has its own type checking via `astro check`
       },
     },
     rules: {
@@ -70,6 +73,17 @@ export default tseslint.config(
       'astro/no-conflict-set-directives': 'error',
       'astro/no-unused-define-vars-in-style': 'error',
       'astro/valid-compile': 'error',
+      // Disable type-aware rules for Astro files (they require project config)
+      '@typescript-eslint/no-unsafe-assignment': 'off',
+      '@typescript-eslint/no-unsafe-member-access': 'off',
+      '@typescript-eslint/await-thenable': 'off',
+      '@typescript-eslint/no-floating-promises': 'off',
+      '@typescript-eslint/no-misused-promises': 'off',
+      '@typescript-eslint/no-unnecessary-type-assertion': 'off',
+      '@typescript-eslint/prefer-nullish-coalescing': 'off',
+      '@typescript-eslint/prefer-optional-chain': 'off',
+      '@typescript-eslint/strict-boolean-expressions': 'off',
+      '@typescript-eslint/switch-exhaustiveness-check': 'off',
     },
   },
 );
