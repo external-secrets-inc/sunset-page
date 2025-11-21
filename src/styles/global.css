@@ -63,6 +63,8 @@
   text-decoration-thickness: 2px;
   text-underline-offset: 4px;
   transition: color 0.2s;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .prose a:hover {
