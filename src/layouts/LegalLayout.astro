@@ -1,0 +1,35 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import HeaderLogo from '../components/HeaderLogo.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = "External Secrets Inc.",
+  description = "External Secrets Inc."
+} = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="min-h-screen bg-linear-to-br from-base-50 via-primary-100 to-primary-100">
+    <div class="max-w-4xl mx-auto px-6 py-16 md:py-24">
+      <header class="mb-12 md:mb-16 text-center flex flex-col items-center justify-center">
+        <HeaderLogo />
+        <div class="mt-6 h-px w-full bg-linear-to-r from-transparent via-primary-400 to-transparent opacity-50" />
+      </header>
+
+      <main class="max-w-3xl mx-auto">
+        <article class="prose prose-lg max-w-none prose-headings:text-base-900 prose-headings:font-semibold prose-p:text-base-900 prose-p:leading-relaxed prose-strong:text-base-900 prose-strong:font-semibold prose-a:text-primary-400 prose-a:no-underline hover:prose-a:text-primary-900 prose-a:underline prose-a:decoration-2 prose-a:underline-offset-4 prose-ul:text-base-900 prose-ol:text-base-900 prose-li:text-base-900">
+          <slot />
+        </article>
+      </main>
+
+      <Footer />
+    </div>
+  </div>
+</BaseLayout>
+
