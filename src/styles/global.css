@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  /* Base Grays */
+  --color-base-50: hsl(255 100% 98.4%);
+  --color-base-100: hsl(251 100% 97.8%);
+  --color-base-200: hsl(252 75.8% 93.5%);
+  --color-base-300: hsl(253 62.7% 88.4%);
+  --color-base-400: hsl(253 33.8% 69.8%);
+  --color-base-500: hsl(255 27% 52.7%);
+  --color-base-600: hsl(255 28.4% 39.4%);
+  --color-base-700: hsl(255 32.3% 26.1%);
+  --color-base-800: hsl(256 28.4% 18.6%);
+  --color-base-900: hsl(254 28.8% 11.6%);
+  --color-base-950: hsl(255 46.2% 4.7%);
+  --color-base-1000: hsl(252 55.6% 1.8%);
+
+  /* Primary Purples */
+  --color-primary-50: hsl(255 100% 97.6%);
+  --color-primary-100: hsl(254 100% 95.7%);
+  --color-primary-200: hsl(254 100% 91.8%);
+  --color-primary-300: hsl(257 100% 85.1%);
+  --color-primary-400: hsl(260 100% 75.5%);
+  --color-primary-500: hsl(263 100% 65.5%);
+  --color-primary-600: hsl(267 99.1% 55.7%);
+  --color-primary-700: hsl(270 100% 44.9%);
+  --color-primary-800: hsl(268 87.2% 39.8%);
+  --color-primary-900: hsl(267 74.7% 34.1%);
+  --color-primary-950: hsl(265 80.9% 22.5%);
+  --color-primary-1000: hsl(263 89.7% 15.3%);
+  
+  /* Animations */
+  --animate-spin-slow: spin 3s linear infinite;
+}
+
+/* Custom Utilities */
+@utility animate-spin-slow {
+  animation: var(--animate-spin-slow);
+}

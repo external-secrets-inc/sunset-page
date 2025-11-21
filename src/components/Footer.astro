@@ -1,0 +1,26 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<footer class="mt-20 pt-12 border-t border-primary-400">
+  <div class="flex flex-col md:flex-row items-center justify-center gap-6 text-primary-900">
+    <a href="/terms" class="hover:text-primary-400 transition-colors font-medium">
+      Terms
+    </a>
+    <span class="hidden md:block">•</span>
+    <a href="/license" class="hover:text-primary-400 transition-colors font-medium">
+      License
+    </a>
+    <span class="hidden md:block">•</span>
+    <a
+      href="https://www.linkedin.com/company/external-secrets-inc"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="hover:text-primary-400 transition-colors font-medium inline-flex items-center gap-2"
+    >
+      <Icon name="lucide:linkedin" class="w-4 h-4" />
+      LinkedIn
+    </a>
+  </div>
+</footer>
+

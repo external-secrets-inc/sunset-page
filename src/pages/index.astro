@@ -1,0 +1,112 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LogoIcon from '../components/LogoIcon.astro';
+import HeaderLogo from '../components/HeaderLogo.astro';
+import Footer from '../components/Footer.astro';
+import { Icon } from 'astro-icon/components';
+
+---
+
+<BaseLayout>
+  <div class="min-h-screen bg-linear-to-br from-base-50 via-primary-100 to-primary-100 relative overflow-hidden">
+      <div class="fixed top-48 right-48 opacity-10 z-10 animate-spin-slow [animation-duration:150s]">
+        <LogoIcon />
+      </div>
+
+    <div class="max-w-4xl mx-auto px-6 py-16 md:py-24 relative z-20">
+      <!-- Letter Content -->
+      <div class="max-w-3xl mx-auto">
+        <header class="mb-12 md:mb-16 text-center flex flex-col items-center justify-center">
+          <HeaderLogo />
+          <div class="mt-6 h-px w-full bg-linear-to-r from-transparent via-primary-400 to-transparent opacity-50" />
+        </header>
+
+        <main>
+        <!-- Letter Header -->
+        <div class="mb-10 md:mb-12">
+          <p class="text-base-600 text-sm font-medium mb-2">November 2025</p>
+        </div>
+
+        <!-- Letter Body -->
+        <article class="prose prose-lg max-w-none">
+          <!-- Greeting -->
+          <p class="text-base-900 text-2xl md:text-3xl leading-relaxed font-normal mb-8 md:mb-10">
+            Dear Community,
+          </p>
+
+          <!-- Opening Paragraph -->
+          <p class="text-base-900 text-lg md:text-xl leading-relaxed mb-6 md:mb-8 font-normal">
+            <strong class="font-semibold text-base-900">External Secrets Inc.</strong> is winding down operations. Our last day
+            of full operations will be <strong class="font-semibold text-base-900">November 28, 2025</strong>.
+          </p>
+
+          <!-- Main Content -->
+          <div class="space-y-6 md:space-y-8 text-base-900 text-lg md:text-xl leading-relaxed">
+            <p class="font-normal">
+              We wish to thank all of our customers, supporters, users, and advisors for helping us in our journey to
+              build some incredible tools for non-human identity credential management.
+            </p>
+
+            <!-- Good News Card -->
+            <div class="bg-white p-8 md:p-10 space-y-5 rounded-4xl my-8 md:my-10 shadow-sm border border-primary-100">
+              <p class="text-base-900 font-semibold text-xl">
+                Good news: thanks to the support and blessing of our backer,{" "}
+                <a
+                  href="https://www.opencoreventures.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-primary-400 hover:text-primary-900 font-semibold underline decoration-2 underline-offset-4 transition-colors"
+                >
+                  Open Core Ventures
+                </a>
+                , we are making our products and code open source!
+              </p>
+              <a
+                href="https://github.com/external-secrets"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 text-primary-400 hover:text-primary-900 font-medium transition-colors group"
+              >
+                <Icon name="lucide:github" class="w-5 h-5" />
+                <span class="underline decoration-2 underline-offset-4">View our repositories here</span>
+              </a>
+            </div>
+
+            <p class="font-normal">
+              We hope our hard work will benefit the community for many years to come.
+            </p>
+
+            <p class="font-normal">
+              Also, we are working with the maintainers of the{" "}
+              <a
+                href="https://external-secrets.io"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-primary-400 hover:text-primary-900 font-medium underline decoration-2 underline-offset-4 transition-colors"
+              >
+                External Secrets Operator (ESO)
+              </a>{" "}
+              project to upstream many parts of our code into ESO as well.
+            </p>
+          </div>
+
+          <!-- Closing -->
+          <div class="mt-12 md:mt-16 space-y-4 text-base-900 text-lg md:text-xl leading-relaxed">
+            <p class="font-normal">With gratitude,</p>
+            <a
+              href="https://www.linkedin.com/company/external-secrets-inc/people/?viewAsMember=true"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-primary-400 hover:text-primary-900 font-semibold text-xl md:text-2xl underline decoration-2 underline-offset-4 transition-colors"
+            >
+              The External Secrets Inc. Team
+            </a>
+          </div>
+        </article>
+        </main>
+      </div>
+
+      <Footer />
+    </div>
+  </div>
+</BaseLayout>
