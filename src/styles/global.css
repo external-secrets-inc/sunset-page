@@ -1,6 +1,16 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+/* Optimized to reduce FOUT - values from Fallback Font Generator */
+@font-face {
+  font-family: "Adjusted Arial Fallback";
+  src: local(Arial);
+  size-adjust: 100%;
+  ascent-override: 91%;
+  descent-override: 24%;
+  line-gap-override: 6%;
+}
+
 @theme {
   /* Base Grays */
   --color-base-50: hsl(255 100% 98.4%);
