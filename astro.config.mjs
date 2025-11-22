@@ -6,8 +6,8 @@ import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://external-secrets-inc.github.io',
-  base: '/sunset-page',
+  site: 'https://externalsecrets.com',
+  base: '/',
   integrations: [icon(), mdx()],
   vite: {
     plugins: [tailwindcss()]
